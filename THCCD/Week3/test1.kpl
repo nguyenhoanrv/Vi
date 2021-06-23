@@ -1,0 +1,7 @@
+Program Test3B; (*Thieu dong ngoac o vi tri toan tu < *)
+Var Min : Integer;
+	a,b=2,c:Integer;
+	d=2:char;
+Begin
+	a := 1;
+End.

@@ -1,0 +1,19 @@
+extend layout
+block layout-content
+    .container.mt-4
+        h3 Edit 
+        .todolists.mt-4
+            for item in todos
+                form.input-data(method="POST", action='/todo/edit/'+item.id)
+                                .form-group
+                                    label Title
+                                    input.form-control(type='text', name='title', value=item.title, maxlength="30", required)
+                                .form-group
+                                    label Description
+                                    input.form-control(type='text', name='description', value=item.description, maxlength="200", required)
+                                .form-group
+                                    .form-check
+                                        input#defaultCheck1.form-check-input(type='checkbox' name='is_done' value='true' checked=item.is_done)
+                                        label.form-check-label(for='defaultCheck1') Done
+
+                                button.btn.btn-primary(type='submit') Update    

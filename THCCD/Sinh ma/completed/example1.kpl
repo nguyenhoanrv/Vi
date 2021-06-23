@@ -1,0 +1,7 @@
+PROGRAM Nhapso;
+Var   n : Integer;
+BEGIN
+   n := 0;
+   While n<10 do
+      n := Readi;
+END.

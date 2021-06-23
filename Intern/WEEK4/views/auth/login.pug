@@ -1,0 +1,16 @@
+extends ../layouts/inc.pug
+block content
+    h1 Login
+    if error
+        .alert.alert-danger= error
+
+    .container
+        .row
+            .col-5.text-center(style="margin: 0px auto")
+                form.p-5.border(method="POST",action="/login")
+                    h4 Login
+                    label(for="email") Email
+                    input#email.form-control(type="text",name="email")
+                    label(for="password") password
+                    input#password.form-control(type="password",name="password")
+                    input.mt-4.btn.btn-success(type="submit", value="Login")

@@ -1,0 +1,12 @@
+Program Todo;
+Const Max = 10;
+Type Vector = Array(.10.) Of Integer;
+    Procedure Foo(Var a : Integer);
+    Var M : Array(.10.) of Vector;  
+        b : Integer;
+    Begin
+        b := 2;
+    End;
+Begin
+    call Foo(1);
+End.

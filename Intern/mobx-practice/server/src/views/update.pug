@@ -1,0 +1,33 @@
+extends layout
+
+block layout-content
+    .container.mt-4
+        h2 Todolist
+        form.form-inline.my-2.my-lg-0
+            input.form-control.mr-sm-2(type='search' placeholder='Search' aria-label='Search' name="searchByTitle")
+            button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
+        .todolists.mt-4
+            ul
+            table.table
+                    thead
+                        tr
+                        th(scope='col') Title
+                        th(scope='col') Description
+                        th(scope='col') Action
+                        th(scope='col') Done
+                    tbody
+                    for item in todos
+                        tr
+                            td(style= item.is_done ? "text-decoration: line-through;" : '')=item.title
+                            td(style= item.is_done ? "text-decoration: line-through;" : '')=item.description
+                            td  
+                               a(href='/todo/edit/'+item.id) Update
+                            td 
+                                form(method="POST", action=`/todo/${item.id}`)
+                                    input.d-none(type="text" name='id' value=item.id)
+                                    button.btn.btn-danger(type="submit") Delete
+                                //- form(method="POST", action=`/todo/${item.id}`)
+                                //-     input.d-none(type="text" name='id' value= item.id)
+                                //-     button.btn.btn-success(type="submit") Done
+                                
+                            

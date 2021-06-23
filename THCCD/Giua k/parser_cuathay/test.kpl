@@ -1,0 +1,28 @@
+PROGRAM  EXAMPLE3;  (* TOWER OF HANOI *)
+VAR  I:INTEGER;  
+     N:INTEGER;
+     D,B=2,c=7,f:INTEGER;  
+     P:INTEGER;  
+     Q:INTEGER;
+     C:CHAR;
+
+
+BEGIN
+  FOR  N := 1  TO  4  DO  
+    BEGIN
+      FOR  I:=1  TO  4  DO  
+        CALL  WRITEC(' ');
+      CALL  READC(C);  
+      CALL  WRITEC(C)
+    END;
+  P:=1; 
+  A(.3.),(.3.) := 1;
+  a := 3 <> 2 ? 1:2; 
+  Q:=2;
+  FOR  N:=2  TO  4  DO
+    BEGIN  
+      I:=0;  
+      CALL  HANOI(N,P,Q);  
+      CALL  WRITELN  
+    END
+END.  (* TOWER OF HANOI *)

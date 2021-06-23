@@ -1,0 +1,25 @@
+PROGRAM  EXAMPLE4;  (* Example 4 *)
+CONST MAX = 10;
+TYPE T = INTEGER;
+VAR  A : ARRAY(. 10 .) OF T;
+     N : INTEGER;
+     CH : STRING;
+
+PROCEDURE INPUT;
+VAR I : INTEGER;
+    TMP : INTEGER;
+BEGIN
+  X:= IF X = 0 THEN 0 ELSE 
+  IF X > 0 THEN X ELSE -X;
+END;
+
+BEGIN
+   CH := "jas fhu";
+   WHILE CH = 'y' DO
+     BEGIN
+       CALL INPUT;
+       CALL OUTPUT;
+       CALL WRITEI(SUM);
+       CH := READC;
+     END
+END.  (* Example 4 *)

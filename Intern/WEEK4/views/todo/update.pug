@@ -1,0 +1,32 @@
+extends ../layouts/inc.pug
+block content
+    h1 Update
+    if errors
+        each error in errors
+            .alert.alert-danger= error
+    if data
+        form(action="/todo/"+data.id,method="POST")
+            table.table#todo-list
+                thead
+                    tr
+                        th id 
+                        th title
+                        th desc
+                        th is_done
+                        th view
+                        th delete
+                tbody
+                    tr
+                        td= data.id 
+                        td
+                            input(type="text",name="title",value=data.title)
+                        td
+                            input(type="text",name="desc",value=data.description)
+                        td= data.is_done
+                        td
+                            a.btn.btn-light(href="/todo/"+data.id) view
+                        td
+                            a.btn.btn-danger.delete(href="/delete/"+data.id,data-id=data.id) Delete
+            input(type="submit", value="Update")
+    else
+        p Khong tồn tại todo có id  !           

@@ -1,0 +1,9 @@
+PROGRAM MoreThan10;
+Var   n : Integer;
+BEGIN
+   n := 0;
+   While n<10 do
+      BEGIN
+      n := Readi;
+      END
+END.

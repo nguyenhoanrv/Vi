@@ -1,0 +1,36 @@
+extends ../layouts/inc.pug
+block content
+    h1 
+        span.mr-3 Week4 
+    .d-flex.align-items-center
+        
+        form.ml-auto(action="/todo/search",method="GET",class="d-flex") 
+            input(type="text",name="s",placeholder="Search by title or status",class="form-control")
+            input(type="submit", value="Search")
+    if (typeof s !== 'undefined')
+        p Kết quả tìm kiếm cho : #{s}
+    if data.length > 0 
+        table.table.table-striped#todo-list
+            thead
+                tr
+                    th id 
+                    th title
+                    th desc
+                    th is_done
+                    th view
+                    th delete
+            tbody
+                each a in data
+                    tr
+                        td
+                            a(href="/todo/"+ a.id ) #{a.id}
+                        td= a.title
+                        td= a.description
+                        td= a.is_done
+                            a(href="/todo/update_status/"+a.id)  change_status
+                        td
+                            a.btn.btn-light(href="/todo/"+a.id) view
+                        td
+                            a.btn.btn-danger.delete(href="/delete/"+a.id,data-id=a.id) Delete
+    else
+        p Danh sách trống ! 

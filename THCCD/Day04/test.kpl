@@ -1,0 +1,9 @@
+  Program A14; 
+  const a = 1;
+        c = -a;
+  Type Vec = ARRAY(.10.) OF Integer;
+  Var Arr : ARRAY(.120.) OF VEC;
+        B : Vec;
+   BEGIN
+       Arr(.5.) := B;
+   End.

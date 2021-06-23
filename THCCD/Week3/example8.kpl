@@ -1,0 +1,6 @@
+Program Test1B;
+CONST  X = 10;
+  Y = -x;
+  Begin
+
+  End.
